@@ -27,8 +27,8 @@ Dit project werkt alleen als je Laragon 6 draait met PHP 8.1.x en MySQL 8.x. Geb
     * Importeer de data
 9. Open het Laragon of Herd venster en klik op stop, en daarna weer op start all. Als er een windows beveiligingsvenster opent, klik dan op ja.
 10. Run in cmd `npm run dev`
-11. Ga naar 4s_manuals.test
-
+11. Ga naar 4s_manuals.test    
+       
 
 
 ## Uitleg mappen en bestanden
