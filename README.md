@@ -23,7 +23,7 @@ Gebruik Laravel Herd als ontwikkelomgeving, met DBNgin die een MySQL server draa
 7. Als het script vraagt of er een database aangemaakt moet worden, kies dan yes.
 8. Nu staat de structuur van je database. Je kunt nu de testdata importeren om fatsoenlijk met de app te werken:
     * Ga in phpMyAdmin naar de database _4s_manuals_
-    * Ga naar importeren en kies het _4s_manuals.sql_ bestand uit de hoofdmap van je project
+    * Ga naar importeren en kies het _4s_manuals.sql    _ bestand uit de hoofdmap van je project
     * Importeer de data
 9. Ga naar 4s_manuals.test
 
