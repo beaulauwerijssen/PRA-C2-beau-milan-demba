@@ -10,7 +10,7 @@ Je krijgt toegang tot een GIT repository, waar een Laravel applicatie in klaar s
 
 ## Ontwikkelomgeving
 
-Dit project werkt alleen als je Laragon 6 draait met PHP 8.1.x en MySQL 8.x. Gebruik ook de Composer versie die meegeleverd wordt in Laragon 6.
+Gebruik Laravel Herd als ontwikkelomgeving, met DBNgin die een MySQL server draait. Zorg er ten alle tijden voor dat deze aan staan.
 
 ### Repo werkend krijgen
 
@@ -25,11 +25,7 @@ Dit project werkt alleen als je Laragon 6 draait met PHP 8.1.x en MySQL 8.x. Geb
     * Ga in phpMyAdmin naar de database _4s_manuals_
     * Ga naar importeren en kies het _4s_manuals.sql_ bestand uit de hoofdmap van je project
     * Importeer de data
-9. Open het Laragon of Herd venster en klik op stop, en daarna weer op start all. Als er een windows beveiligingsvenster opent, klik dan op ja.
-10. Run in cmd `npm run dev`
-11. Ga naar 4s_manuals.test    
-       
-
+9. Ga naar 4s_manuals.test
 
 ## Uitleg mappen en bestanden
 
