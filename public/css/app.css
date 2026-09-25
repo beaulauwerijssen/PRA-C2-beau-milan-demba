@@ -10025,3 +10025,39 @@ a.text-dark:hover, a.text-dark:focus {
     color: #ccc;
     content: "/ ";
 }
+
+/* Lichte achtergrond, net zoals het informatieblok bovenaan */
+.brand-list-container {
+  background-color: #f0f4f8 !important;
+  border: 1px solid #dce3ec;
+  border-radius: 8px;
+  padding: 20px !important;
+  margin-bottom: 20px;
+}
+
+/* De letters (A, B, C...) */
+.brand-list-container h2 {
+  color: var(--dark) !important;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 5px;
+  margin-top: 15px;
+}
+
+/* Geen bolletjes voor de lijst */
+.brand-list-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Heldere, goed leesbare blauwe links */
+.brand-list-container a {
+  color: var(--primary) !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Donkerder blauw bij hover */
+.brand-list-container a:hover {
+  color: #1d68a7 !important;
+  text-decoration: underline !important;
+}
