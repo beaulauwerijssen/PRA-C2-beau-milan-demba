@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('brand_id');
             $table->string('name');
+            $table->string('ean');
             $table->bigInteger('filesize');
             $table->text('originUrl');
             $table->string('filename')->nullable();
