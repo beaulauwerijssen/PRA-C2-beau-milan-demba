@@ -2,8 +2,8 @@
     <p>{{ __('misc.copyright') }}</p>
 
     <div class="footer-links">
-        <a href="{{ url('/over-ons') }}">Over ons</a> |
-        <a href="{{ url('/contact') }}">Contact</a>
+        <a href="{{ route('about') }}">Over ons</a> |
+        <a href="{{ route('contact') }}">Contact</a>
     </div>
 </footer>
 

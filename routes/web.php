@@ -33,12 +33,41 @@ use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
     return view('pages.homepage', compact('brands'));
 })->name('home');
+
+Route::get('/contact', function () {
+    $brands = Brand::all()->sortBy('name');
+    return view('pages.contact', compact('brands'));
+})->name('contact');
+
+Route::post('/contact', function (Request $request) {
+    $validated = $request->validate([
+        'name' => ['required', 'string', 'max:100'],
+        'email' => ['required', 'email', 'max:255'],
+        'subject' => ['required', 'string', 'max:150'],
+        'message' => ['required', 'string', 'max:5000'],
+    ]);
+
+    Mail::raw($validated['message'], function ($mail) use ($validated) {
+        $mail->to(config('mail.from.address'))
+            ->replyTo($validated['email'], $validated['name'])
+            ->subject($validated['subject']);
+    });
+
+    return to_route('contact')->with('contact_sent', 'Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.');
+})->name('contact.send');
+
+Route::get('/over-ons', function () {
+    $brands = Brand::all()->sortBy('name');
+    return view('pages.contact', compact('brands'));
+})->name('about');
 
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
