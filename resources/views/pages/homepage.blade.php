@@ -19,9 +19,7 @@
     $chunk_size = ceil($size / $columns);
     ?>
 
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
+    <div class="row">
 
             @foreach($brands->chunk($chunk_size) as $chunk)
             <div class="col-md-4 brand-list-container">
@@ -50,8 +48,6 @@
                 unset($header_first_letter);
                 ?>
             @endforeach
-
-        </div>
 
     </div>
 </x-layouts.app>

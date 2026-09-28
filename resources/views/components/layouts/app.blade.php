@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="col-md-8">
+        <div class="col-md-8 offset-md-2">
             <x-header/>
 
             <ul class="breadcrumb">
@@ -32,9 +32,6 @@
                 {{ $breadcrumb ?? '' }}
             </ul>
 
-        </div>
-
-        <div class="row">
             <x-footer/>
         </div>
 
