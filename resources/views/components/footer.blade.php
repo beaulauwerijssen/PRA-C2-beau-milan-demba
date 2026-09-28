@@ -1,10 +1,15 @@
-
 <footer>
-	© {{ __('misc.copyright') }}
+    <p>{{ __('misc.copyright') }}</p>
+
+    <div class="footer-links">
+        <a href="{{ url('/over-ons') }}">Over ons</a> |
+        <a href="{{ url('/contact') }}">Contact</a>
+    </div>
 </footer>
 
 
-<!-- analytics code -->              
+
+<!-- analytics code -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -19,10 +24,10 @@
 </script>
 <!-- Einde analytics code -->
 
-<script language="Javascript" type="text/javascript"> 
- 
- if (top.location!= self.location) { 
+<script language="Javascript" type="text/javascript">
+
+ if (top.location!= self.location) {
   top.location = self.location.href
- } 
- 
+ }
+
 </script>
