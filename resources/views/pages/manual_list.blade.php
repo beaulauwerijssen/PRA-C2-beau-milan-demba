@@ -13,8 +13,7 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
-    <div class="mt-4 mb-4">
-        <h2>Meest bekeken handleidingen</h2>
+    <div class="button">
 
         @if ($popularBrandManuals->isEmpty())
             <p>Voor dit merk zijn nog geen handleidingen beschikbaar.</p>
@@ -30,17 +29,4 @@
             </ul>
         @endif
     </div>
-
-        @foreach ($manuals as $manual)
-
-            @if ($manual->locally_available)
-                <a class="btn btn-primary" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">{{ $manual->name }}</a>
-                ({{$manual->filesize_human_readable}})
-            @else
-                <a class="btn btn-primary" href="{{ $manual->url }}" target="new" title="{{ $manual->name }}">{{ $manual->name }}</a>
-            @endif
-
-            <br />
-        @endforeach
-
 </x-layouts.app>
