@@ -13,6 +13,23 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
+    <div class="mt-4 mb-4">
+        <h2>Meest bekeken handleidingen</h2>
+
+        @if ($popularBrandManuals->isEmpty())
+            <p>Voor dit merk zijn nog geen handleidingen beschikbaar.</p>
+        @else
+            <ul>
+                @foreach ($popularBrandManuals as $manual)
+                    <li>
+                        <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/">
+                            {{ $manual->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
 
         @foreach ($manuals as $manual)
 

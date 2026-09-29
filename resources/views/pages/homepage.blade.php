@@ -50,4 +50,23 @@
             @endforeach
 
     </div>
+
+    <div class="mt-5">
+        <h2>Meest bekeken handleidingen</h2>
+
+        @if ($popularManuals->isEmpty())
+            <p>Er zijn nog geen handleidingen beschikbaar.</p>
+        @else
+            <ul>
+                @foreach ($popularManuals as $manual)
+                    <li>
+                        <a href="/{{ $manual->brand_id }}/{{ $manual->brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/">
+                            {{ $manual->brand->name }}: {{ $manual->name }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
+
 </x-layouts.app>

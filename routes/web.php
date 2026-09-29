@@ -26,6 +26,7 @@ Productcat:		/category/12/Computers/
 */
 
 use App\Models\Brand;
+use App\Models\Manual;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\TypeController;
@@ -39,7 +40,9 @@ use Illuminate\Support\Facades\Mail;
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
-    return view('pages.homepage', compact('brands'));
+    $popularManuals = Manual::popular(10);
+
+    return view('pages.homepage', compact('brands', 'popularManuals'));
 })->name('home');
 
 Route::get('/contact', function () {

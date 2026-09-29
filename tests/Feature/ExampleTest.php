@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Brand;
+use App\Models\Manual;
 use Illuminate\Support\Facades\Mail;
 
 test('the application returns a successful response', function () {
@@ -25,6 +27,54 @@ test('a valid contact message is sent', function () {
 
     $response->assertRedirect('/contact')
         ->assertSessionHas('contact_sent');
+});
+
+test('manual views are counted and popular manuals are shown on the homepage and brand page', function () {
+    $samsung = Brand::create(['name' => 'Samsung']);
+    $philips = Brand::create(['name' => 'Philips']);
+
+    $tv = Manual::create([
+        'brand_id' => $samsung->id,
+        'name' => 'TV',
+        'ean' => '1111111',
+        'filesize' => 2048,
+        'originUrl' => 'https://example.com/tv.pdf',
+        'view_count' => 4,
+    ]);
+
+    $washer = Manual::create([
+        'brand_id' => $samsung->id,
+        'name' => 'Wasmachine',
+        'ean' => '2222222',
+        'filesize' => 4096,
+        'originUrl' => 'https://example.com/washer.pdf',
+        'view_count' => 2,
+    ]);
+
+    $airfryer = Manual::create([
+        'brand_id' => $philips->id,
+        'name' => 'Airfryer',
+        'ean' => '3333333',
+        'filesize' => 1024,
+        'originUrl' => 'https://example.com/airfryer.pdf',
+        'view_count' => 1,
+    ]);
+
+    $this->get("/{$samsung->id}/{$samsung->getNameUrlEncodedAttribute()}/{$tv->id}/")->assertOk();
+
+    $this->assertDatabaseHas('manuals', ['id' => $tv->id, 'view_count' => 5]);
+
+    $homeResponse = $this->get('/');
+    $homeResponse->assertOk()->assertViewHas('popularManuals', function ($manuals) use ($tv, $washer, $airfryer) {
+        return $manuals->pluck('id')->all() === [$tv->id, $washer->id, $airfryer->id]
+            && $manuals->first()->brand->name === 'Samsung'
+            && $manuals->first()->name === 'TV';
+    });
+
+    $brandResponse = $this->get("/{$samsung->id}/{$samsung->getNameUrlEncodedAttribute()}/");
+    $brandResponse->assertOk()->assertViewHas('popularBrandManuals', function ($manuals) use ($tv, $washer) {
+        return $manuals->pluck('id')->all() === [$tv->id, $washer->id];
+    });
 });
 
 test('an invalid contact message is rejected', function () {

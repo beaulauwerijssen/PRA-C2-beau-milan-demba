@@ -4,10 +4,35 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Manual extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'brand_id',
+        'name',
+        'ean',
+        'filesize',
+        'originUrl',
+        'filename',
+        'downloadedServer',
+        'view_count',
+    ];
+
+    public function brand(): BelongsTo
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
+    public static function popular(int $limit = 10)
+    {
+        return static::with('brand')
+            ->orderByDesc('view_count')
+            ->limit($limit)
+            ->get();
+    }
 
     // Returns the filesize in a human readable format
     public function getFilesizeHumanReadableAttribute(){

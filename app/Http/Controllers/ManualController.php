@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Manual;
 
 class ManualController extends Controller
 {
-    public function show($brand_id, $brand_slug, $manual_id )
+    public function show($brand_id, $brand_slug, $manual_id)
     {
         $brand = Brand::findOrFail($brand_id);
-        $manual = Manual::findOrFail($manual_id);
+        $manual = $brand->manuals()->findOrFail($manual_id);
+
+        // Count only real manual views, not list pages or homepage clicks.
+        $manual->increment('view_count');
 
         return view('pages/manual_view', [
-            "manual" => $manual,
-            "brand" => $brand,
+            'manual' => $manual,
+            'brand' => $brand,
+            'type' => $manual,
         ]);
     }
 }
