@@ -15,6 +15,10 @@ class ManualController extends Controller
         // Count only real manual views, not list pages or homepage clicks.
         $manual->increment('view_count');
 
+        // Ticket 3a: Oplossing voor de teller
+        // Dit hoogt de 'views' kolom in de database direct op met +1
+        $manual->increment('views');
+
         return view('pages/manual_view', [
             'manual' => $manual,
             'brand' => $brand,
