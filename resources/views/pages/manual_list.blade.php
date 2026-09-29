@@ -20,11 +20,11 @@
         @else
             <ul>
                 @foreach ($popularBrandManuals as $manual)
-                    <li>
+                    <p>
                         <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/">
                             {{ $manual->name }}
                         </a>
-                    </li>
+                    </p>
                 @endforeach
             </ul>
         @endif
