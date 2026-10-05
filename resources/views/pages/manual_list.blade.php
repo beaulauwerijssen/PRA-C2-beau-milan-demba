@@ -13,20 +13,28 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
-    <div class="button">
-
+    <div class="mt-4 mb-4">
         @if ($popularBrandManuals->isEmpty())
             <p>Voor dit merk zijn nog geen handleidingen beschikbaar.</p>
         @else
-            <ul>
-                @foreach ($popularBrandManuals as $manual)
-                    <li>
-                        <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/">
-                            {{ $manual->name }}
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
+            @foreach ($popularBrandManuals as $manual)
+                <a class="btn btn-primary mb-2 mr-2" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">
+                    {{ $manual->name }}
+                </a>
+            @endforeach
         @endif
     </div>
+
+    @foreach ($manuals as $manual)
+        @if (!$popularBrandManuals->contains('id', $manual->id))
+            @if ($manual->locally_available)
+                <a class="btn btn-primary" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">{{ $manual->name }}</a>
+                ({{$manual->filesize_human_readable}})
+            @else
+                <a class="btn btn-primary" href="{{ $manual->url }}" target="new" title="{{ $manual->name }}">{{ $manual->name }}</a>
+            @endif
+
+            <br />
+        @endif
+    @endforeach
 </x-layouts.app>
