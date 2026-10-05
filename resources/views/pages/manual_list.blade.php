@@ -17,11 +17,15 @@
         @if ($popularBrandManuals->isEmpty())
             <p>Voor dit merk zijn nog geen handleidingen beschikbaar.</p>
         @else
-            @foreach ($popularBrandManuals as $manual)
-                <a class="btn btn-primary mb-2 mr-2" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" title="{{ $manual->name }}">
-                    {{ $manual->name }}
-                </a>
-            @endforeach
+            <ul>
+                @foreach ($popularBrandManuals as $manual)
+                    <p>
+                        <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/">
+                            {{ $manual->name }}
+                        </a>
+                    </p>
+                @endforeach
+            </ul>
         @endif
     </div>
 
