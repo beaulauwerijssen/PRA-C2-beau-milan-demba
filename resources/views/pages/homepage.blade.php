@@ -12,6 +12,7 @@
         </x-slot:title>
     </h1>
 
+    <p>Gemaakt door {{ $name }}. Er zijn {{ $brandCount }} merken.</p>
 
     <?php
     $size = count($brands);
