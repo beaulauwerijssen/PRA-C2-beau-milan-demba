@@ -39,7 +39,7 @@
         @error('message') <small class="form-text text-danger">{{ $message }}</small> @enderror
       </div>
 
-      <button type="submit" class="btn btn-primary">Bericht versturen</button>
+      <button type="submit" class="btn btn-primary button">Bericht versturen</button>
     </form>
   </div>
 </x-layouts.app>

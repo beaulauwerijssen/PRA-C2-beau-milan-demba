@@ -228,6 +228,45 @@ button {
     border-radius: 0;
 }
 
+.button {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    margin: 0.2rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: lightblue;
+    border: 2px solid lightblue;
+    border-radius: 999px;
+    transition: all 0.15s ease-in-out;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    color: #1565c0;
+    background-color: #f6fbff;
+    border-color: #e61a1a;
+    text-decoration: none;
+    box-shadow: 0 0 0 0.15rem rgba(255, 43, 43, 0.12);
+}
+
+.button:focus {
+    outline: 0;
+}
+
+.button:disabled,
+.button.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
 button:focus:not(:focus-visible) {
     outline: 0;
 }
@@ -10092,4 +10131,8 @@ input[type=submit]:hover {
 .container {
   border-radius: 5px;
   padding: 20px;
+}
+
+.button {
+
 }
