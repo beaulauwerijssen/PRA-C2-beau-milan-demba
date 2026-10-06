@@ -17,7 +17,19 @@
     $size = count($brands);
     $columns = 3;
     $chunk_size = ceil($size / $columns);
+    $letters = $brands->map(fn ($brand) => strtoupper(substr($brand->name, 0, 1)))->unique();
+    $seen = [];
     ?>
+
+    <nav aria-label="Navigatie op merkletter">
+        <ul class="brand-letter-navigation">
+            @foreach (range('A', 'Z') as $letter)
+                @if ($letters->contains($letter))
+                    <li><a href="#brand-letter-{{ $letter }}">{{ $letter }}</a></li>
+                @endif
+            @endforeach
+        </ul>
+    </nav>
 
     <div class="row">
 
@@ -30,8 +42,13 @@
                             $current_first_letter = strtoupper(substr($brand->name, 0, 1));
 
                             if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
+                                $heading_id = '';
+                                if (in_array($current_first_letter, range('A', 'Z'), true) && !isset($seen[$current_first_letter])) {
+                                    $heading_id = ' id="brand-letter-' . $current_first_letter . '"';
+                                    $seen[$current_first_letter] = true;
+                                }
                                 echo '</ul>
-						<h2>' . $current_first_letter . '</h2>
+						<h2' . $heading_id . '>' . $current_first_letter . '</h2>
 						<ul>';
                             }
                             $header_first_letter = $current_first_letter

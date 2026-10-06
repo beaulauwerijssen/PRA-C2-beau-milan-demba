@@ -10093,3 +10093,12 @@ input[type=submit]:hover {
   border-radius: 5px;
   padding: 20px;
 }
+
+.brand-letter-navigation {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  overflow-x: auto;
+  padding: 0;
+  white-space: nowrap;
+}
