@@ -77,6 +77,17 @@ test('manual views are counted and popular manuals are shown on the homepage and
     });
 });
 
+test('the site language can be switched to Dutch', function () {
+    $response = $this->from('/')->get('/language/nl/');
+
+    $response->assertRedirect('/');
+    $response->assertSessionHas('locale', 'nl');
+
+    $this->withSession(['locale' => 'nl'])
+        ->get('/')
+        ->assertSee('Hoofdpagina');
+});
+
 test('an invalid contact message is rejected', function () {
     Mail::fake();
 
