@@ -20,7 +20,7 @@
             <ul>
                 @foreach ($popularBrandManuals as $manual)
                     <p>
-                        <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/">
+                        <a class="button" href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/">
                             {{ $manual->name }}
                         </a>
                     </p>

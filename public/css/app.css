@@ -228,6 +228,37 @@ button {
     border-radius: 0;
 }
 
+.button {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    margin: 0.2rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: lightblue;
+    border: 2px solid lightblue;
+    border-radius: 999px;
+    outline: none;
+    transition: none;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    color: black;
+    background-color: lightblue;
+    border-color: lightblue;
+    text-decoration: none;
+    box-shadow: none;
+    outline: none;
+}
+
 button:focus:not(:focus-visible) {
     outline: 0;
 }
@@ -2419,11 +2450,14 @@ textarea.form-control {
 }
 .btn:hover {
     color: #212529;
+    background-color: transparent;
+    border-color: transparent;
     text-decoration: none;
+    box-shadow: none;
 }
 .btn:focus, .btn.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+    box-shadow: none;
 }
 .btn.disabled, .btn:disabled {
     opacity: 0.65;
@@ -2443,14 +2477,15 @@ fieldset:disabled a.btn {
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: #227dc7;
-    border-color: #2176bd;
+    background-color: #3490dc;
+    border-color: #3490dc;
+    box-shadow: none;
 }
 .btn-primary:focus, .btn-primary.focus {
     color: #fff;
-    background-color: #227dc7;
-    border-color: #2176bd;
-    box-shadow: 0 0 0 0.2rem rgba(82, 161, 225, 0.5);
+    background-color: #3490dc;
+    border-color: #3490dc;
+    box-shadow: none;
 }
 .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
@@ -10086,7 +10121,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #04AA6D;
 }
 
 .container {
@@ -10101,4 +10136,8 @@ input[type=submit]:hover {
   overflow-x: auto;
   padding: 0;
   white-space: nowrap;
+}
+
+.button {
+}
 }
