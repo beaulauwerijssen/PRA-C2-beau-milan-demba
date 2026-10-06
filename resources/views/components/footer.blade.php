@@ -1,9 +1,21 @@
 <footer>
     <p>{{ __('misc.copyright') }}</p>
 
-    <div class="footer-links">
+    <div class="footer-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
         <a href="{{ route('about') }}">Over ons</a> |
         <a href="{{ route('contact') }}">Contact</a>
+    </div>
+
+    <div class="footer-language mt-2 text-center">
+        <span class="small mr-2">{{ __('misc.language') }}:</span>
+        <div class="btn-group btn-group-sm" role="group" aria-label="{{ __('misc.language') }}">
+            <a href="{{ route('change.locale', ['language_slug' => 'nl']) }}"
+               class="btn btn-link px-2 py-1 {{ app()->getLocale() === 'nl' ? 'text-dark font-weight-bold' : 'text-muted' }}"
+               aria-label="Nederlands">NL</a>
+            <a href="{{ route('change.locale', ['language_slug' => 'en']) }}"
+               class="btn btn-link px-2 py-1 {{ app()->getLocale() === 'en' ? 'text-dark font-weight-bold' : 'text-muted' }}"
+               aria-label="English">EN</a>
+        </div>
     </div>
 </footer>
 
