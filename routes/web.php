@@ -42,8 +42,10 @@ use Illuminate\Support\Facades\Mail;
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
     $popularManuals = Manual::popular(10);
+    $name = 'Beau, Milan en Demba';
+    $brandCount = $brands->count();
 
-    return view('pages.homepage', compact('brands', 'popularManuals'));
+    return view('pages.homepage', compact('brands', 'popularManuals', 'name', 'brandCount'));
 })->name('home');
 
 Route::get('/contact', function () {
@@ -82,7 +84,7 @@ Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::cl
 Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed']);
 
 // Locale routes
-Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale']);
+Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale'])->name('change.locale');
 
 // List of manuals for a brand
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
