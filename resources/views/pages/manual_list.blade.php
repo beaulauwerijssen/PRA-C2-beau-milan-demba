@@ -15,7 +15,7 @@
 
     <div class="mt-4 mb-4">
         @if ($popularBrandManuals->isEmpty())
-            <p>Voor dit merk zijn nog geen handleidingen beschikbaar.</p>
+            <p>{{ __('misc.no_brand_manuals') }}</p>
         @else
             <ul>
                 @foreach ($popularBrandManuals as $manual)

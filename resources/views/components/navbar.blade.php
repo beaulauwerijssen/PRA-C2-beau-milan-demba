@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="/" title="{{ __('misc.home_alt') }}">{{ __('misc.homepage_title') }}</a>
         </div>
         <div id="navbar" class="form-inline">
-            <a href="{{ route('contact') }}">Contact</a>
+            <a href="{{ route('contact') }}">{{ __('misc.contact') }}</a>
 
             <script>
                 (function () {

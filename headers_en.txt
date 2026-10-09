@@ -1,0 +1,21 @@
+HTTP/1.1 302 Found
+Host: 127.0.0.1:8000
+Connection: close
+X-Powered-By: PHP/8.4.25
+Cache-Control: no-cache, private
+Date: Fri, 09 Oct 2026 09:04:19 GMT
+Location: http://127.0.0.1:8000
+Content-Type: text/html; charset=utf-8
+Set-Cookie: XSRF-TOKEN=eyJpdiI6IlcwQ2ZldjZwSVdUK0NQcGJDYWdqN2c9PSIsInZhbHVlIjoiazloUzBWek82VnVHblh0ZnVoaVJ5L3JiS1Y1VDB2czZCVjcyODBJTXYydmYyLzY0bHBpTk1vVXltSXVQU3NXUllRWG0xSXBjQ1BtVUhJaXFiYzdMUkNQOGNIdjhTM2Zqc21ndkJoU2xieXY1eWxhUFIwVHlvdnBtRWs1ZS82Q0ciLCJtYWMiOiI4YmJhNzljZGRiY2QzZTYzNGFlMjQ1ZjJjY2YwNDZhNzExMjI0NDE2YzE4NmMwMzJiMDBjNzVkMmI3ZjViMTVkIiwidGFnIjoiIn0%3D; expires=Fri, 09 Oct 2026 11:04:19 GMT; Max-Age=7200; path=/; samesite=lax
+Set-Cookie: 4s-manuals-session=eyJpdiI6InIyL1ZGcjN1Y1ZhaG1VWVVuT0ZzZ2c9PSIsInZhbHVlIjoiSm5JYXQ0SmptNmN2T0t1QzY2QW1peXFYdW9pSkxaZld3NlNNcjlIbCt6KzF1N21TYkF3czhMZzBnbFhvV3VXSFA1MW1ZLzFFdzdtZ0hPaDFFNEdNd2NTZUhITHlNOGsrZzlQeWlER1JKYzZ1ZTNRYVA2bEVxYW5xbzNLYW5yUGgiLCJtYWMiOiJjZDRjZmEwODRkZGI0MDRhY2Q3MGFiZjlkMTk0N2Q0ZGNlN2UwZmZhMmM1MzBiZWE2MDIxZTUxODZhODMyNDg5IiwidGFnIjoiIn0%3D; expires=Fri, 09 Oct 2026 11:04:19 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+HTTP/1.1 200 OK
+Host: 127.0.0.1:8000
+Connection: close
+X-Powered-By: PHP/8.4.25
+Content-Type: text/html; charset=utf-8
+Cache-Control: no-cache, private
+Date: Fri, 09 Oct 2026 09:04:19 GMT
+Set-Cookie: XSRF-TOKEN=eyJpdiI6ImJBYkhxNTZrdzFGNFdsZnRwNU8waUE9PSIsInZhbHVlIjoiRUNhVFREdU1UcjdkMmp0SkFuekFKQ1RTV1VjTnpHRCsyTGlOTTZmclpDZndiMURMTFFqQjQ1RktyT1V5NnNNMHlrcFZuRkt4Ny80S2lVSVRHejB0aXFGdllIQjdTa1N4S204cmE3SlYzMXVUeDEydFE0dFM4RG1teGpYQUZnSmUiLCJtYWMiOiJhMDFkMmY0NGUzYTBlYTkyMjdiYmM1MTA4OTk5NDUwZDdmZDBlYjI5MDMyMjNjYTI0ZWUzYTkwMzNkMzdkZjIyIiwidGFnIjoiIn0%3D; expires=Fri, 09 Oct 2026 11:04:19 GMT; Max-Age=7200; path=/; samesite=lax
+Set-Cookie: 4s-manuals-session=eyJpdiI6IllGSlUyQTlNUHFHeFpFRVBuUVl5aXc9PSIsInZhbHVlIjoiT09xb2FzZUZGZGRaRXpBdk5EdWF6Nnpzby9RNVpEWjkrOEhKY0RpZmNSckc3MmdlYXBUMDQrL0FkQldlY3lSVXdjYTlpTi9FWFM3Zm1hSFJZeFhueDdFYzhvVklOc2hwVFh6MStSN1dBQlFPUStqMXFXQ0lpT1JoZzhOUC92bSsiLCJtYWMiOiIxY2JiYmJkNmVlMDFlYjZjYjM1NjBkMzZhODQwNWFhZWEwNDI5MDE5NmNmNDVkMDAyMTcyOTUwNjE1ZjJmZjEyIiwidGFnIjoiIn0%3D; expires=Fri, 09 Oct 2026 11:04:19 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+

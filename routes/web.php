@@ -67,7 +67,7 @@ Route::post('/contact', function (Request $request) {
             ->subject($validated['subject']);
     });
 
-    return to_route('contact')->with('contact_sent', 'Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.');
+    return to_route('contact')->with('contact_sent', __('messages.contact_sent'));
 })->name('contact.send');
 
 Route::get('/over-ons', function () {
@@ -85,6 +85,11 @@ Route::get('/datafeeds/{brand_slug}.xml', [RedirectController::class, 'datafeed'
 
 // Locale routes
 Route::get('/language/{language_slug}/', [LocaleController::class, 'changeLocale'])->name('change.locale');
+
+// List brands starting with a letter
+Route::get('/{letter}/', [BrandController::class, 'showLetter'])
+    ->where('letter', '[A-Za-z]')
+    ->name('brands.letter');
 
 // List of manuals for a brand
 Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
