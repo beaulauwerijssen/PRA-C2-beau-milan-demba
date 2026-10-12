@@ -15,5 +15,6 @@ return [
 
     'ads_not_displayed' => "Test omgeving; advertenties worden niet getoond",
     'page_not_found' => "De pagina die u probeerde te openen kon niet worden gevonden.",
+    'contact_sent' => "Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.",
 
 ];

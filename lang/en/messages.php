@@ -15,5 +15,6 @@ return [
 
     'ads_not_displayed' => "Test environment; adds not displayed",
     'page_not_found' => "The page you tried to open does not exist.",
+    'contact_sent' => "Thank you for your message. We will contact you as soon as possible.",
 
 ];

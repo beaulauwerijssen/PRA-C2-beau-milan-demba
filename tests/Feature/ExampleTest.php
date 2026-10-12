@@ -15,6 +15,27 @@ test('the contact and about footer routes return a successful response', functio
     $this->get('/over-ons')->assertStatus(200);
 });
 
+test('brand letter pages list matching brands and link to their brand pages', function () {
+    $bosch = Brand::create(['name' => 'Bosch']);
+    Brand::create(['name' => 'Braun']);
+    Brand::create(['name' => 'Samsung']);
+
+    $response = $this->get('/B/');
+
+    $response->assertOk()
+        ->assertSee('Bosch')
+        ->assertSee('Braun')
+        ->assertDontSee('Samsung')
+        ->assertSee("/{$bosch->id}/Bosch/");
+
+    $this->get('/b/')
+        ->assertOk()
+        ->assertSee('Brands starting with B');
+
+    $this->get('/C/')->assertOk()->assertSee('There are no brands starting with C.');
+    $this->get('/123/')->assertNotFound();
+});
+
 test('a valid contact message is sent', function () {
     Mail::fake();
 

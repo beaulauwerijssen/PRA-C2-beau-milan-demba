@@ -12,7 +12,13 @@
         </x-slot:title>
     </h1>
 
-    <p>Gemaakt door {{ $name }}. Er zijn {{ $brandCount }} merken.</p>
+    <p>{{ __('misc.created_by', ['name' => $name, 'count' => $brandCount]) }}</p>
+
+    <div style="margin-bottom: 30px; margin-top: 15px;">
+        <a href="{{ route('categories.index') }}" class="btn btn-primary" style="background-color: #007bff; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; display: inline-block; font-weight: bold; font-size: 1.1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            Bekijk handleidingen per productcategorie →
+        </a>
+    </div>
 
     <?php
     $size = count($brands);
@@ -22,11 +28,11 @@
     $seen = [];
     ?>
 
-    <nav aria-label="Navigatie op merkletter">
+    <nav aria-label="{{ __('misc.brand_navigation') }}">
         <ul class="brand-letter-navigation">
             @foreach (range('A', 'Z') as $letter)
                 @if ($letters->contains($letter))
-                    <li><a href="#brand-letter-{{ $letter }}">{{ $letter }}</a></li>
+                    <li><a href="{{ route('brands.letter', ['letter' => $letter]) }}">{{ $letter }}</a></li>
                 @endif
             @endforeach
         </ul>
@@ -70,10 +76,10 @@
     </div>
 
     <div class="mt-5">
-        <h2>Meest bekeken handleidingen</h2>
+        <h2>{{ __('misc.most_viewed_manuals') }}</h2>
 
         @if ($popularManuals->isEmpty())
-            <p>Er zijn nog geen handleidingen beschikbaar.</p>
+            <p>{{ __('misc.no_manuals') }}</p>
         @else
             <ul>
                 @foreach ($popularManuals as $manual)

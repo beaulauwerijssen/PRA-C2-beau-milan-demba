@@ -17,6 +17,12 @@
                 </ul>
             </div>
 
+    <div class="footer-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
+        <a href="{{ route('about') }}">{{ __('misc.about_us') }}</a> |
+        <a href="{{ route('contact') }}">{{ __('misc.contact') }}</a>
+    </div>
+
+
             <div class="site-footer__info">
                 <h3>Follow us</h3>
                 <ul>
