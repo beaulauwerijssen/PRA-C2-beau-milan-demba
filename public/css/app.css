@@ -10145,10 +10145,8 @@ input[type=submit]:hover {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-top: 2.5rem;
-  background:
-    radial-gradient(circle at top left, rgba(148, 163, 184, 0.15), transparent 35%),
-    linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  box-shadow: 0 -12px 30px rgba(15, 23, 42, 0.14);
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  box-shadow: 0 -12px 30px rgba(15, 23, 42, 0.12);
   color: #e5e7eb;
   border-top: 0;
 }
@@ -10175,6 +10173,13 @@ input[type=submit]:hover {
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .site-footer__brand-block {
@@ -10265,6 +10270,10 @@ input[type=submit]:hover {
   .site-footer__bottom {
     flex-direction: column;
     text-align: center;
+  }
+
+  .site-footer__meta {
+    justify-content: center;
   }
 }
 

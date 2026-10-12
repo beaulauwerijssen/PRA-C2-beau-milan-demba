@@ -5,7 +5,9 @@
                 <div class="site-footer__brand">
                     {{ config('app.name', 'PRA-C2') }}
                 </div>
-                <p class="site-footer__tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="site-footer__tagline">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
             </div>
 
             <div class="site-footer__info">
@@ -16,12 +18,6 @@
                     <li>Lorem ipsum street 42</li>
                 </ul>
             </div>
-
-    <div class="footer-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
-        <a href="{{ route('about') }}">{{ __('misc.about_us') }}</a> |
-        <a href="{{ route('contact') }}">{{ __('misc.contact') }}</a>
-    </div>
-
 
             <div class="site-footer__info">
                 <h3>Follow us</h3>
@@ -34,6 +30,11 @@
         </div>
 
         <div class="site-footer__bottom">
+            <div class="site-footer__meta">
+                <a href="{{ route('about') }}">{{ __('misc.about_us') }}</a>
+                <a href="{{ route('contact') }}">{{ __('misc.contact') }}</a>
+            </div>
+
             <p>{{ __('misc.copyright') }}</p>
 
             <div class="site-footer__language">
