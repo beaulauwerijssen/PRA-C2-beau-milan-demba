@@ -99,14 +99,25 @@ test('manual views are counted and popular manuals are shown on the homepage and
 });
 
 test('the site language can be switched to Dutch', function () {
-    $response = $this->from('/')->get('/language/nl/');
+    $response = $this->from('/B/')->get('/language/nl/');
 
-    $response->assertRedirect('/');
+    $response->assertRedirect('/B/');
     $response->assertSessionHas('locale', 'nl');
 
-    $this->withSession(['locale' => 'nl'])
-        ->get('/')
-        ->assertSee('Hoofdpagina');
+    $this->get('/B/')
+        ->assertSee('Hoofdpagina')
+        ->assertSee('Merken beginnend met B');
+
+    $this->get('/contact')->assertSee('Naam')->assertDontSee('E-mail address');
+    $this->get('/')
+        ->assertSee('lang="nl"', false)
+        ->assertSee('gratis handleidingen en gebruikersgidsen')
+        ->assertSee('Volg ons');
+    $this->get('/categories')->assertSee('Productcategorieën');
+
+    $this->from('/contact')->get('/language/en/')->assertRedirect('/contact');
+    $this->get('/contact')->assertSee('E-mail address')->assertDontSee('E-mailadres');
+    $this->get('/categories')->assertSee('Product categories');
 });
 
 test('an invalid contact message is rejected', function () {
@@ -121,4 +132,18 @@ test('an invalid contact message is rejected', function () {
 
     $response->assertRedirect('/contact')->assertSessionHasErrors(['name', 'email', 'subject', 'message']);
     Mail::assertNothingSent();
+
+    $response = $this->followingRedirects()
+        ->withSession(['locale' => 'nl'])
+        ->from('/contact')
+        ->post('/contact', [
+            'name' => '',
+            'email' => 'geen-email',
+            'subject' => '',
+            'message' => '',
+        ]);
+
+    $response->assertOk()
+        ->assertSee('e-mailadres moet een geldig e-mailadres zijn.')
+        ->assertSee('naam is verplicht.');
 });

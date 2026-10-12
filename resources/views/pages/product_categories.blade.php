@@ -1,6 +1,6 @@
 <x-layouts.app>
     <div class="row">
-        <h1 class="title">Productcategorieën</h1>
+        <h1 class="title">{{ __('misc.product_categories') }}</h1>
     </div>
 
     <div class="container" style="margin-top: 20px;">
@@ -16,7 +16,7 @@
                                 </a>
                             </li>
                         @empty
-                            <li style="color: #888; font-style: italic;">Nog geen merken</li>
+                            <li style="color: #888; font-style: italic;">{{ __('misc.no_category_brands') }}</li>
                         @endforelse
                     </ul>
                 </div>

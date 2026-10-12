@@ -5,7 +5,7 @@
 
     <div class="container">
     @if (session('contact_sent'))
-      <div class="alert alert-success" role="status">{{ session('contact_sent') }}</div>
+      <div class="alert alert-success" role="status">{{ __('messages.contact_sent') }}</div>
     @endif
 
     @if ($errors->any())

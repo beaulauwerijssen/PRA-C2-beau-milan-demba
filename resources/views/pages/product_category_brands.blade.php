@@ -1,5 +1,5 @@
 @extends('pages.homepage')
 
 @section(
-	'title', 'Bijna alle merken...'
+	'title', __('misc.all_brands')
 )

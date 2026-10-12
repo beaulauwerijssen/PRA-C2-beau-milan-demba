@@ -67,7 +67,7 @@ Route::post('/contact', function (Request $request) {
             ->subject($validated['subject']);
     });
 
-    return to_route('contact')->with('contact_sent', __('messages.contact_sent'));
+    return to_route('contact')->with('contact_sent', true);
 })->name('contact.send');
 
 Route::get('/over-ons', function () {

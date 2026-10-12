@@ -16,7 +16,7 @@
 
     <div style="margin-bottom: 30px; margin-top: 15px;">
         <a href="{{ route('categories.index') }}" class="btn btn-primary" style="background-color: #007bff; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; display: inline-block; font-weight: bold; font-size: 1.1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            Bekijk handleidingen per productcategorie →
+            {{ __('misc.browse_categories') }} →
         </a>
     </div>
 

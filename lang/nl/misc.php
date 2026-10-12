@@ -38,5 +38,15 @@ return [
         'message' => "Bericht",
         'send_message' => "Bericht versturen",
         'check_form' => "Controleer de ingevulde gegevens en probeer het opnieuw.",
+        'browse_categories' => "Bekijk handleidingen per productcategorie",
+        'product_categories' => "Productcategorieën",
+        'no_category_brands' => "Er zijn nog geen merken beschikbaar",
+        'manuals_for' => "Handleidingen voor :brand",
+        'view_manual_for' => "Bekijk de handleiding voor :brand :manual",
+        'iframes_not_supported' => "Je browser ondersteunt geen iframes.",
+        'footer_tagline' => "Vind en download gratis handleidingen en gebruikersgidsen voor duizenden merken en apparaten.",
+        'follow_us' => "Volg ons",
+        'page_title' => "Download je handleiding: gratis handleidingen voor alle merken en apparaten!",
+        'page_description' => "Download gratis handleidingen en gebruikersgidsen voor alle merken en apparaten.",
 
     ];

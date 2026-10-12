@@ -38,5 +38,15 @@ return [
         'message' => "Message",
         'send_message' => "Send message",
         'check_form' => "Check the filled-in data and try again.",
+        'browse_categories' => "Browse manuals by product category",
+        'product_categories' => "Product categories",
+        'no_category_brands' => "No brands available yet",
+        'manuals_for' => "Manuals for :brand",
+        'view_manual_for' => "View manual for :brand :manual",
+        'iframes_not_supported' => "Your browser does not support iframes.",
+        'footer_tagline' => "Find and download free manuals and user guides for thousands of brands and devices.",
+        'follow_us' => "Follow us",
+        'page_title' => "Download your manual: Free user guides for all brands and devices!",
+        'page_description' => "Download your manual: Free user guides for all brands and devices!",
 
     ];

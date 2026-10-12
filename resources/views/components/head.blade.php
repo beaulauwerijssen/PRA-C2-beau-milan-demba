@@ -1,6 +1,6 @@
 
 <meta charset="utf-8">
-<meta name="description" content="Download your manual: Free user guides for all brands and devices!"/>
+<meta name="description" content="{{ __('misc.page_description') }}"/>
 <meta name="author" content="Avarix">
 <meta name="keywords" content="userguide, user's guide, guide, manual, manual, owners manual, referenceguide, quickguide, service manual, free, pdf, download"/>
 <meta name="language" content="{{ app()->getLocale() }}">
@@ -9,4 +9,4 @@
 
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
-<title>Download your manual: Free user guides for all brands and devices!</title>
+<title>{{ __('misc.page_title') }}</title>

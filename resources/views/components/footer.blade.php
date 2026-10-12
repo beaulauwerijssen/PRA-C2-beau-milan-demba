@@ -7,21 +7,20 @@
                     {{ config('app.name', 'PRA-C2') }}
                 </div>
                 <p class="site-footer__tagline">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    {{ __('misc.footer_tagline') }}
                 </p>
             </div>
 
             <div class="site-footer__info">
-                <h3>Contact</h3>
+                <h3>{{ __('misc.contact') }}</h3>
                 <ul>
                     <li><a href="mailto:lorem@ipsum.com">lorem@ipsum.com</a></li>
                     <li><a href="tel:+310200000000">+31 (0)20 000 0000</a></li>
-                    <li>Lorem ipsum street 42</li>
                 </ul>
             </div>
 
             <div class="site-footer__info">
-                <h3>Follow us</h3>
+                <h3>{{ __('misc.follow_us') }}</h3>
                 <ul>
                     <li><a href="#">Instagram @loremipsum</a></li>
                     <li><a href="#">Facebook /loremipsum</a></li>
