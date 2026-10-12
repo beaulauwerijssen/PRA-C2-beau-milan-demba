@@ -1,4 +1,5 @@
 <footer class="site-footer mt-5">
+    <span class="site-footer__easter-egg" aria-hidden="true">bbb</span>
     <div class="site-footer__inner">
         <div class="site-footer__top">
             <div class="site-footer__brand-block">

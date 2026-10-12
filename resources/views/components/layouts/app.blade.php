@@ -32,13 +32,14 @@
                 {{ $breadcrumb ?? '' }}
             </ul>
 
-            <x-footer/>
         </div>
 
     </div>
 
 
 </div>
+
+<x-footer/>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
